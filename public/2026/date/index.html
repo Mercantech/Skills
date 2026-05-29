@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Date</title>
+    <script>
+      if (!location.pathname.endsWith("/")) location.replace(location.pathname + "/" + location.search + location.hash);
+    </script>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-page="date">
+    <div class="site-shell">
+      <header class="page-hero">
+        <div class="page-hero__overlay"></div>
+        <nav class="top-nav" aria-label="Hovedmenu">
+          <a class="brand-lockup nav-brand" href="../../" aria-label="Mercantec Skills forsiden">
+            <span class="brand-mark" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </span>
+            <span class="brand-text"><span>Mercantec</span><strong>Skills</strong></span>
+          </a>
+          <div class="nav-links">
+            <a href="../../">Skills</a>
+            <a href="../">Grupper</a>
+            <a href="../audience/">Publikum</a>
+            <a href="../scores/">Point</a>
+          </div>
+        </nav>
+        <div class="page-hero__content">
+          <div class="page-title-block">
+            <p class="eyebrow">Skjult side</p>
+            <h1>Date</h1>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="page-grid">
+          <aside class="work-panel">
+            <div class="panel-heading">
+              <p>Upload</p>
+              <h2>Billede</h2>
+            </div>
+            <form id="date-form" class="stack-form">
+              <label>
+                <span>Overskrift</span>
+                <input id="date-title" type="text" maxlength="80" required />
+              </label>
+              <label class="file-field">
+                <span>Billede</span>
+                <input id="date-image" type="file" accept="image/*" required />
+              </label>
+              <div id="date-preview" class="date-preview" hidden></div>
+              <p id="date-message" class="form-message" role="status" aria-live="polite"></p>
+              <button class="primary-button" type="submit">
+                <span aria-hidden="true">+</span>
+                Gem billede
+              </button>
+            </form>
+
+            <div class="vote-admin">
+              <span class="field-label">Stemmeoversigt</span>
+              <button id="purge-votes" class="danger-button" type="button">Slet alle publikumsstemmer</button>
+              <div id="voter-list" class="voter-list" aria-live="polite"></div>
+            </div>
+          </aside>
+
+          <section class="date-area">
+            <div>
+              <p class="section-kicker">Galleri</p>
+              <h2 class="section-heading">Date</h2>
+            </div>
+            <div id="date-gallery" class="date-gallery" aria-live="polite"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <template id="date-card-template">
+      <article class="date-card">
+        <img alt="" />
+        <div class="date-card__body">
+          <h3></h3>
+          <button class="delete-link" type="button">Slet</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="../shared.js" defer></script>
+    <script src="date.js" defer></script>
+  </body>
+</html>

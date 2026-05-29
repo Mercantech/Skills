@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kryds &amp; Bolle Linkbank</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="home">
+    <div class="site-shell">
+      <header class="hero">
+        <div class="hero__overlay"></div>
+        <nav class="top-nav" aria-label="Hovedmenu">
+          <a class="brand-lockup nav-brand" href="../" aria-label="Mercantec Skills forsiden">
+            <span class="brand-mark" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </span>
+            <span class="brand-text">
+              <span>Mercantec</span>
+              <strong>Skills</strong>
+            </span>
+          </a>
+          <div class="nav-links">
+            <a href="../">Skills</a>
+            <a href="./" aria-current="page">Grupper</a>
+            <a href="audience/">Publikum</a>
+            <a href="scores/">Point</a>
+          </div>
+        </nav>
+
+        <div class="hero__content">
+          <section class="intro" aria-labelledby="page-title">
+            <p class="eyebrow">Elevernes hostede spil</p>
+            <h1 id="page-title">Kryds <span>&amp;</span> Bolle</h1>
+            <p class="tagline">Byg. T&aelig;nk. Vind.</p>
+
+            <div class="mini-stats" aria-label="Oversigt">
+              <div>
+                <strong id="total-count">0</strong>
+                <span>grupper</span>
+              </div>
+              <div>
+                <strong id="top-score">0</strong>
+                <span>h&oslash;jeste point</span>
+              </div>
+              <div>
+                <strong id="last-added">-</strong>
+                <span>senest tilf&oslash;jet</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="submit-panel" aria-labelledby="submit-title">
+            <div class="panel-heading">
+              <p>Linkbank</p>
+              <h2 id="submit-title">Tilf&oslash;j gruppe</h2>
+            </div>
+
+            <form id="group-form" class="game-form" autocomplete="off">
+              <input id="group-id" type="hidden" />
+
+              <label>
+                <span>Gruppenavn</span>
+                <input id="group-title" type="text" placeholder="Fx Gruppe 4" maxlength="60" required />
+              </label>
+
+              <label>
+                <span>Hosted link</span>
+                <input id="group-url" type="text" inputmode="url" placeholder="https://..." />
+              </label>
+
+              <label>
+                <span>Elev eller hold</span>
+                <input id="group-owner" type="text" placeholder="Valgfrit" maxlength="60" />
+              </label>
+
+              <label>
+                <span>Kort tekst</span>
+                <textarea id="group-description" rows="4" placeholder="Hvad har gruppen bygget?"></textarea>
+              </label>
+
+              <label class="file-field">
+                <span>Billede</span>
+                <input id="group-image" type="file" accept="image/*" />
+              </label>
+
+              <div id="image-preview" class="image-preview" hidden></div>
+
+              <div class="form-actions">
+                <button type="submit" class="primary-button">
+                  <span aria-hidden="true">+</span>
+                  Gem gruppe
+                </button>
+                <button id="cancel-edit" type="button" class="ghost-button" hidden>Annuller</button>
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <div class="decor-board" aria-hidden="true">
+          <span>X</span><span>O</span><span>X</span>
+          <span>O</span><span>X</span><span>O</span>
+          <span>O</span><span>X</span><span></span>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="toolbar" aria-label="Filtrer grupper">
+          <div>
+            <p class="section-kicker">Klar til kamp</p>
+            <h2>Grupper</h2>
+          </div>
+
+          <label class="search-field">
+            <span>S&oslash;g</span>
+            <input id="search-input" type="search" placeholder="S&oslash;g efter gruppe, elev eller link" />
+          </label>
+        </section>
+
+        <section id="group-list" class="game-list" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <template id="group-card-template">
+      <article class="game-card">
+        <div class="game-card__media">
+          <img alt="" />
+          <div class="game-card__mark" aria-hidden="true">XO</div>
+        </div>
+        <div class="game-card__body">
+          <div>
+            <h3></h3>
+            <p class="owner"></p>
+            <p class="description"></p>
+            <a class="host" target="_blank" rel="noopener noreferrer"></a>
+          </div>
+          <div class="score-pill"><strong>0</strong><span>point</span></div>
+        </div>
+        <div class="game-card__actions">
+          <a class="open-link" target="_blank" rel="noopener noreferrer">&Aring;bn spil</a>
+          <button class="copy-link" type="button">Kopier</button>
+          <button class="edit-link" type="button">Rediger</button>
+          <button class="delete-link" type="button" aria-label="Slet gruppe">Slet</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="shared.js" defer></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>

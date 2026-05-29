@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Publikumsstemmer</title>
+    <script>
+      if (!location.pathname.endsWith("/")) location.replace(location.pathname + "/" + location.search + location.hash);
+    </script>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-page="audience">
+    <div class="site-shell">
+      <header class="page-hero">
+        <div class="page-hero__overlay"></div>
+        <nav class="top-nav" aria-label="Hovedmenu">
+          <a class="brand-lockup nav-brand" href="../../" aria-label="Mercantec Skills forsiden">
+            <span class="brand-mark" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </span>
+            <span class="brand-text"><span>Mercantec</span><strong>Skills</strong></span>
+          </a>
+          <div class="nav-links">
+            <a href="../../">Skills</a>
+            <a href="../">Grupper</a>
+            <a href="./" aria-current="page">Publikum</a>
+            <a href="../scores/">Point</a>
+          </div>
+        </nav>
+        <div class="page-hero__content">
+          <div class="page-title-block">
+            <p class="eyebrow">Publikumspoint</p>
+            <h1>Stem <span>nu</span></h1>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="page-grid">
+          <aside class="work-panel">
+            <div class="panel-heading">
+              <p>V&aelig;lger</p>
+              <h2>Stemme</h2>
+            </div>
+            <form id="voter-form" class="stack-form">
+              <label>
+                <span>Navn eller kode</span>
+                <input id="voter-name" type="text" placeholder="Fx elevnavn eller billetnr." required />
+              </label>
+              <button class="primary-button" type="submit">Start stemme</button>
+            </form>
+
+            <div id="active-voter" class="active-voter" hidden>
+              <span class="field-label">Aktiv v&aelig;lger</span>
+              <strong></strong>
+              <button id="next-voter" class="ghost-button" type="button">N&aelig;ste person</button>
+            </div>
+
+            <div class="category-panel">
+              <span class="field-label">Publikumspris</span>
+              <div id="category-buttons" class="category-buttons" role="tablist" aria-label="Publikumspris"></div>
+            </div>
+          </aside>
+
+          <section class="vote-category" aria-live="polite">
+            <div>
+              <p class="section-kicker">3 vindere</p>
+              <h2 id="category-title" class="section-heading">Publikum</h2>
+            </div>
+            <div id="vote-grid" class="vote-grid"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <template id="vote-card-template">
+      <article class="vote-card">
+        <img alt="" />
+        <div>
+          <h3></h3>
+          <p class="owner"></p>
+          <p class="description"></p>
+          <div class="vote-meta">
+            <span class="tag vote-count">0 stemmer</span>
+          </div>
+        </div>
+        <button class="vote-button" type="button">Stem</button>
+      </article>
+    </template>
+
+    <script src="../shared.js" defer></script>
+    <script src="audience.js" defer></script>
+  </body>
+</html>

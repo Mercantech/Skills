@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skills</title>
+    <link rel="stylesheet" href="2026/styles.css" />
+    <style>
+      .year-content {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: clamp(32px, 6vw, 70px) 0 80px;
+      }
+
+      .year-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+        gap: 18px;
+        margin-top: 28px;
+      }
+
+      .year-card {
+        position: relative;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        gap: 16px;
+        min-height: 240px;
+        padding: clamp(22px, 4vw, 32px);
+        border: 1px solid var(--line);
+        border-left: 5px solid var(--yellow);
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 45%),
+          var(--panel-strong);
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+        text-decoration: none;
+        color: var(--text);
+        transition: border-color 0.15s ease, transform 0.15s ease;
+      }
+
+      .year-card:hover,
+      .year-card:focus-visible {
+        border-color: var(--yellow);
+        transform: translateY(-3px);
+      }
+
+      .year-card[aria-disabled="true"] {
+        opacity: 0.55;
+        pointer-events: none;
+        border-left-color: var(--line);
+      }
+
+      .year-card__year {
+        margin: 0;
+        font-family: Impact, "Arial Black", sans-serif;
+        font-size: clamp(3rem, 8vw, 5.4rem);
+        line-height: 0.9;
+        text-transform: uppercase;
+      }
+
+      .year-card__year span {
+        color: var(--yellow);
+      }
+
+      .year-card__desc {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .year-card__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: var(--yellow);
+      }
+
+      .year-card__badge {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        min-height: 28px;
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.08);
+        padding: 0 10px;
+        color: var(--muted);
+        font-size: 0.74rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body data-page="skills">
+    <div class="site-shell">
+      <header class="hero">
+        <div class="hero__overlay"></div>
+        <nav class="top-nav" aria-label="Hovedmenu">
+          <a class="brand-lockup nav-brand" href="./" aria-label="Skills forsiden">
+            <span class="brand-mark" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </span>
+            <span class="brand-text">
+              <span>Mercantec</span>
+              <strong>Skills</strong>
+            </span>
+          </a>
+          <div class="nav-links">
+            <a href="./" aria-current="page">Forside</a>
+            <a href="2026/">2026</a>
+          </div>
+        </nav>
+
+        <div class="hero__content">
+          <section class="intro" aria-labelledby="page-title">
+            <p class="eyebrow">Mercantec</p>
+            <h1 id="page-title">Skills</h1>
+            <p class="tagline">V&aelig;lg &aring;rgang</p>
+            <p class="description" style="margin-top: 22px; max-width: 460px;">
+              Alle Skills-konkurrencer samlet &eacute;t sted. V&aelig;lg en &aring;rgang for at se grupper, point og publikumsstemmer.
+            </p>
+          </section>
+        </div>
+
+        <div class="decor-board" aria-hidden="true">
+          <span>X</span><span>O</span><span>X</span>
+          <span>O</span><span>X</span><span>O</span>
+          <span>O</span><span>X</span><span></span>
+        </div>
+      </header>
+
+      <main class="year-content">
+        <section class="toolbar" aria-label="&Aring;rgange">
+          <div>
+            <p class="section-kicker">Konkurrencer</p>
+            <h2>&Aring;rgange</h2>
+          </div>
+        </section>
+
+        <section class="year-grid" aria-label="V&aelig;lg &aring;rgang">
+          <a class="year-card" href="2026/">
+            <span class="year-card__badge">Aktiv</span>
+            <h3 class="year-card__year">20<span>26</span></h3>
+            <p class="year-card__desc">Kryds &amp; Bolle &ndash; elevernes hostede spil, point og publikumspriser.</p>
+            <span class="year-card__cta">&Aring;bn 2026 &rarr;</span>
+          </a>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

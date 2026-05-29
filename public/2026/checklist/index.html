@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tjekliste</title>
+    <script>
+      if (!location.pathname.endsWith("/")) location.replace(location.pathname + "/" + location.search + location.hash);
+    </script>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-page="checklist">
+    <div class="site-shell">
+      <header class="page-hero">
+        <div class="page-hero__overlay"></div>
+        <nav class="top-nav" aria-label="Hovedmenu">
+          <a class="brand-lockup nav-brand" href="../../" aria-label="Mercantec Skills forsiden">
+            <span class="brand-mark" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </span>
+            <span class="brand-text"><span>Mercantec</span><strong>Skills</strong></span>
+          </a>
+          <div class="nav-links">
+            <a href="../../">Skills</a>
+            <a href="../">Grupper</a>
+            <a href="../audience/">Publikum</a>
+            <a href="../scores/">Point</a>
+          </div>
+        </nav>
+        <div class="page-hero__content">
+          <div class="page-title-block">
+            <p class="eyebrow">Krav og basis</p>
+            <h1>Tjek<span>liste</span></h1>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <section id="checklist-shell" class="page-grid">
+          <aside class="work-panel">
+            <div class="panel-heading">
+              <p>Gruppe</p>
+              <h2>Vurdering</h2>
+            </div>
+            <label class="select-field">
+              <span>V&aelig;lg gruppe</span>
+              <select id="group-select"></select>
+            </label>
+            <div class="mini-stats">
+              <div>
+                <strong id="check-score">0</strong>
+                <span>tjeklistepoint</span>
+              </div>
+            </div>
+          </aside>
+
+          <section class="checklist-area" id="checklist-area" aria-live="polite"></section>
+        </section>
+      </main>
+    </div>
+
+    <template id="check-section-template">
+      <section class="check-section">
+        <h3></h3>
+        <div class="check-list"></div>
+      </section>
+    </template>
+
+    <script src="../shared.js" defer></script>
+    <script src="checklist.js" defer></script>
+  </body>
+</html>
