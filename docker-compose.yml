@@ -6,7 +6,7 @@ services:
       DATABASE_URL: postgres://skills:${POSTGRES_PASSWORD}@db:5432/skills
       PORT: 3000
     expose:
-      - "3000"
+      - "1337:3000"
     depends_on:
       db:
         condition: service_healthy
